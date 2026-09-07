@@ -4,7 +4,7 @@ Summary of the work done in this session, converting the pen.dev designs into an
 
 ## 1. Reading the pen.dev designs
 
-Source file: `../designs/POC2penmerge.pen` (single merged `.pen` file containing three top-level frames: `Page - Desktop`, `Page - Mobile`, `Navbar Frame - Mobile (Open)`), read via the `pencil` MCP tools (`get_app_state`, `execute` with `Get`/`Print`, `TakeScreenshot`) — never via `Read`/`Grep`, since `.pen` files are encrypted JSON.
+Source file: `designs/POC2penmerge.pen` (single merged `.pen` file containing three top-level frames: `Page - Desktop`, `Page - Mobile`, `Navbar Frame - Mobile (Open)`), read via the `pencil` MCP tools (`get_app_state`, `execute` with `Get`/`Print`, `TakeScreenshot`) — never via `Read`/`Grep`, since `.pen` files are encrypted JSON.
 
 Extracted design tokens (from `GetVariables()`):
 
