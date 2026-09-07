@@ -9,19 +9,17 @@ const navLinks = [
 ---
 
 <header class="relative w-full bg-[var(--color-nav-bg)]">
-  <div
-    class="flex h-[72px] w-full items-center justify-between border-b border-[#E3C4A880] px-5 md:h-24 md:px-20"
-  >
-    <p class="font-heading text-[19px] font-semibold text-[var(--color-text-primary)] md:text-2xl">
+  <div class="navbar-bar flex h-[72px] w-full items-center justify-between border-b border-[#E3C4A880] px-5">
+    <p class="navbar-brand font-heading text-[19px] font-semibold text-[var(--color-text-primary)]">
       Dra. Elena Ríos
     </p>
 
-    <nav aria-label="Principal" class="hidden items-center gap-10 md:flex">
+    <nav aria-label="Principal" class="navbar-links hidden items-center md:flex">
       {
         navLinks.map((link) => (
           <a
             href={link.href}
-            class="font-body text-[15px] font-bold tracking-[0.2px] text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-text-primary)]"
+            class="navbar-link font-body text-[15px] font-bold tracking-[0.2px] text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-text-primary)]"
           >
             {link.label}
           </a>
@@ -29,7 +27,7 @@ const navLinks = [
       }
       <a
         href="#contacto"
-        class="rounded-full bg-[var(--color-text-primary)] px-6 py-2.5 font-body text-sm font-bold text-[var(--color-bg)] transition-opacity hover:opacity-90"
+        class="navbar-contact rounded-full bg-[var(--color-text-primary)] px-6 py-2.5 font-body text-sm font-bold text-[var(--color-bg)] transition-opacity hover:opacity-90"
       >
         Contacto
       </a>
@@ -73,6 +71,35 @@ const navLinks = [
     </nav>
   </div>
 </header>
+
+<style>
+  /* See Hero.astro for the fluid-zone rationale (768–1280px, pinned to the
+     original desktop values at 1280+, nothing changes below 768). */
+  @media (min-width: 768px) {
+    .navbar-bar {
+      height: clamp(64px, calc(10.7px + 6.67vw), 96px);
+      padding-inline: clamp(32px, calc(-48px + 10vw), 80px);
+    }
+
+    .navbar-brand {
+      font-size: clamp(19px, calc(10.67px + 1.042vw), 24px);
+    }
+
+    .navbar-links {
+      gap: clamp(20px, calc(-13.3px + 4.167vw), 40px);
+    }
+
+    .navbar-link {
+      font-size: clamp(13px, calc(9.67px + 0.4167vw), 15px);
+    }
+
+    .navbar-contact {
+      padding-inline: clamp(14px, calc(-2.67px + 2.083vw), 24px);
+      padding-block: clamp(7px, calc(2px + 0.625vw), 10px);
+      font-size: clamp(12px, calc(8.67px + 0.4167vw), 14px);
+    }
+  }
+</style>
 
 <script>
   const toggle = document.getElementById("menu-toggle");
