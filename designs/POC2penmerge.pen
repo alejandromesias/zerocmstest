@@ -1,0 +1,98 @@
+{
+  "version": "2.17",
+  "children": [
+    {
+      "type": "frame",
+      "id": "jxePe",
+      "x": 1171,
+      "y": -941,
+      "name": "Page - Desktop",
+      "clip": true,
+      "width": 1440,
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "bzKlv",
+          "type": "ref",
+          "ref": "t:m03PDh",
+          "x": 0,
+          "y": 0,
+          "width": "fill_container",
+          "fill": "$nav-bg"
+        },
+        {
+          "id": "BBOsx",
+          "type": "ref",
+          "ref": "V:ICG4N",
+          "x": 0,
+          "y": 96,
+          "width": "fill_container"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "hkfr3",
+      "x": 2711,
+      "y": -941,
+      "name": "Page - Mobile",
+      "clip": true,
+      "width": 390,
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "MVTFc",
+          "type": "ref",
+          "ref": "t:ECxH0",
+          "x": 0,
+          "y": 0,
+          "width": "fill_container",
+          "fill": "$nav-bg"
+        },
+        {
+          "id": "Y1E2M",
+          "type": "ref",
+          "ref": "V:Wlzmn",
+          "x": 0,
+          "y": 72,
+          "width": "fill_container"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "vWWlC",
+      "x": 3181,
+      "y": -941,
+      "name": "Navbar Frame - Mobile (Open)",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "BOcZ1",
+          "type": "ref",
+          "ref": "t:OygWe",
+          "x": 0,
+          "y": 0,
+          "name": "Navbar - Mobile (Open) [overlay demo]",
+          "fill": "$nav-bg",
+          "descendants": {
+            "t:x0XizE": {
+              "fill": "$nav-bg"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "nav-bg": {
+      "type": "color",
+      "value": "#EDE0CC"
+    }
+  },
+  "imports": {
+    "V": "POC2penvs.lib.pen",
+    "t": "POC2penHeaders.lib.pen"
+  },
+  "fileToken": "1edb1bf1-d561-4c8f-a209-59c3981acc00"
+}

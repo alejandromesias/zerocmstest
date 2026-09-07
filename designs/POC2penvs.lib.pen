@@ -1,0 +1,531 @@
+{
+  "version": "2.17",
+  "children": [
+    {
+      "type": "frame",
+      "id": "ICG4N",
+      "x": 0,
+      "y": 0,
+      "name": "Hero Section - Desktop",
+      "reusable": true,
+      "clip": true,
+      "width": 1440,
+      "height": 760,
+      "fill": "$bg",
+      "gap": 60,
+      "padding": [
+        0,
+        80
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "ellipse",
+          "id": "idfat",
+          "layoutPosition": "absolute",
+          "x": -160,
+          "y": -180,
+          "name": "Decor Blob Sage",
+          "opacity": 0.18,
+          "fill": "$accent-sage",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "type": "ellipse",
+          "id": "YVssO",
+          "layoutPosition": "absolute",
+          "x": 30,
+          "y": 660,
+          "name": "Decor Ring Terracotta",
+          "opacity": 0.5,
+          "innerRadius": 0.78,
+          "fill": "$accent-terracotta",
+          "width": 90,
+          "height": 90
+        },
+        {
+          "type": "frame",
+          "id": "HJnhX",
+          "name": "Hero Text",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 28,
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "kKj0c",
+              "name": "Eyebrow",
+              "fill": "$accent-sage",
+              "content": "PSICÓLOGA CLÍNICA",
+              "fontFamily": "$font-body",
+              "fontSize": 13,
+              "fontWeight": "700",
+              "letterSpacing": 2
+            },
+            {
+              "type": "frame",
+              "id": "PoMYH",
+              "name": "Headline",
+              "layout": "vertical",
+              "gap": 4,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "G5arQw",
+                  "name": "Headline Line 1",
+                  "fill": "$text-primary",
+                  "content": "La sanación comienza",
+                  "fontFamily": "$font-heading",
+                  "fontSize": 58,
+                  "fontWeight": "300",
+                  "fontStyle": "italic"
+                },
+                {
+                  "type": "text",
+                  "id": "L1xDt5",
+                  "name": "Headline Line 2",
+                  "fill": "$text-primary",
+                  "content": "cuando te escuchan.",
+                  "fontFamily": "$font-heading",
+                  "fontSize": 58,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "AXtwZ",
+              "name": "Subtext",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": 460,
+              "content": "Terapia compasiva y basada en evidencia para adultos que atraviesan ansiedad, duelo y transiciones vitales — en un espacio creado para el cambio real.",
+              "lineHeight": 1.55,
+              "fontFamily": "$font-body",
+              "fontSize": 17,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "tL9OL",
+              "name": "CTA Row",
+              "gap": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "t27Hr",
+                  "name": "Primary Button",
+                  "fill": "$text-primary",
+                  "cornerRadius": 999,
+                  "gap": 8,
+                  "padding": [
+                    16,
+                    32
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "M5v0Qy",
+                      "name": "Button Label",
+                      "fill": "$bg",
+                      "content": "Agendar una sesión",
+                      "fontFamily": "$font-body",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "hhOl1",
+                  "name": "Secondary Link",
+                  "gap": 6,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "LwDgW",
+                      "name": "Link Label",
+                      "fill": "$accent-terracotta",
+                      "content": "Saber más",
+                      "fontFamily": "$font-body",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "icon",
+                      "id": "tmLai",
+                      "name": "Link Arrow",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "arrow-right",
+                      "library": "lucide",
+                      "fill": "$accent-terracotta"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "RvPC3",
+              "name": "Trust Note",
+              "fill": "$text-secondary",
+              "content": "Actualmente aceptando nuevos pacientes — en línea y presencial.",
+              "fontFamily": "$font-body",
+              "fontSize": 13,
+              "fontWeight": "normal",
+              "fontStyle": "italic"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "wgFuD",
+          "name": "Portrait",
+          "width": 560,
+          "height": "fill_container",
+          "layout": "none",
+          "children": [
+            {
+              "type": "ellipse",
+              "id": "aKKDe",
+              "x": 90,
+              "y": -40,
+              "name": "Decor Blob Behind Portrait",
+              "opacity": 0.3,
+              "fill": "$accent-sage",
+              "width": 380,
+              "height": 380
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": [
+                210,
+                210,
+                0,
+                0
+              ],
+              "id": "vcvrY",
+              "x": 70,
+              "y": 100,
+              "name": "Portrait Image",
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "psico2.png",
+                "mode": "fill"
+              },
+              "width": 420,
+              "height": 560,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#4A372C33",
+                "offset": {
+                  "x": 0,
+                  "y": 18
+                },
+                "blur": 40
+              }
+            },
+            {
+              "type": "ellipse",
+              "id": "htwra",
+              "x": 460,
+              "y": 120,
+              "name": "Decor Dot Clay",
+              "opacity": 0.9,
+              "fill": "$accent-clay",
+              "width": 20,
+              "height": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Wlzmn",
+      "x": 0,
+      "y": 840,
+      "name": "Hero Section - Mobile",
+      "reusable": true,
+      "clip": true,
+      "width": 390,
+      "fill": "$bg",
+      "layout": "vertical",
+      "gap": 28,
+      "padding": [
+        56,
+        28
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "ellipse",
+          "id": "W2qbM",
+          "layoutPosition": "absolute",
+          "x": -90,
+          "y": -90,
+          "name": "Decor Blob Sage Mobile",
+          "opacity": 0.18,
+          "fill": "$accent-sage",
+          "width": 240,
+          "height": 240
+        },
+        {
+          "type": "ellipse",
+          "id": "vXPUh",
+          "layoutPosition": "absolute",
+          "x": 300,
+          "y": 20,
+          "name": "Decor Ring Terracotta Mobile",
+          "opacity": 0.5,
+          "innerRadius": 0.78,
+          "fill": "$accent-terracotta",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "type": "frame",
+          "id": "esSOE",
+          "name": "Portrait Mobile",
+          "width": 260,
+          "height": 320,
+          "layout": "none",
+          "children": [
+            {
+              "type": "ellipse",
+              "id": "t1GLP8",
+              "x": 35,
+              "y": -20,
+              "name": "Decor Blob Behind Portrait Mobile",
+              "opacity": 0.3,
+              "fill": "$accent-sage",
+              "width": 190,
+              "height": 190
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": [
+                110,
+                110,
+                0,
+                0
+              ],
+              "id": "klnRg",
+              "x": 20,
+              "y": 10,
+              "name": "Portrait Image Mobile",
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "psico2.png",
+                "mode": "fill"
+              },
+              "width": 220,
+              "height": 300,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#4A372C33",
+                "offset": {
+                  "x": 0,
+                  "y": 10
+                },
+                "blur": 24
+              }
+            },
+            {
+              "type": "ellipse",
+              "id": "J1GG3",
+              "x": 225,
+              "y": 15,
+              "name": "Decor Dot Clay Mobile",
+              "opacity": 0.9,
+              "fill": "$accent-clay",
+              "width": 14,
+              "height": 14
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "d3Fkoq",
+          "name": "Eyebrow Mobile",
+          "fill": "$accent-sage",
+          "content": "PSICÓLOGA CLÍNICA",
+          "textAlign": "center",
+          "fontFamily": "$font-body",
+          "fontSize": 11,
+          "fontWeight": "700",
+          "letterSpacing": 1.5
+        },
+        {
+          "type": "frame",
+          "id": "VvRSj",
+          "name": "Headline Mobile",
+          "layout": "vertical",
+          "gap": 2,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "v5V3nD",
+              "name": "Headline Line 1 Mobile",
+              "fill": "$text-primary",
+              "content": "La sanación comienza",
+              "textAlign": "center",
+              "fontFamily": "$font-heading",
+              "fontSize": 32,
+              "fontWeight": "300",
+              "fontStyle": "italic"
+            },
+            {
+              "type": "text",
+              "id": "S9hFo",
+              "name": "Headline Line 2 Mobile",
+              "fill": "$text-primary",
+              "content": "cuando te escuchan.",
+              "textAlign": "center",
+              "fontFamily": "$font-heading",
+              "fontSize": 32,
+              "fontWeight": "700"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "z41fsY",
+          "name": "Subtext Mobile",
+          "fill": "$text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 300,
+          "content": "Terapia compasiva y basada en evidencia para adultos que atraviesan ansiedad, duelo y transiciones vitales.",
+          "lineHeight": 1.5,
+          "textAlign": "center",
+          "fontFamily": "$font-body",
+          "fontSize": 15,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "o804Fa",
+          "name": "CTA Column Mobile",
+          "layout": "vertical",
+          "gap": 14,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "ew5gH",
+              "name": "Primary Button Mobile",
+              "fill": "$text-primary",
+              "cornerRadius": 999,
+              "gap": 8,
+              "padding": [
+                14,
+                28
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Nv3FG",
+                  "name": "Button Label Mobile",
+                  "fill": "$bg",
+                  "content": "Agendar una sesión",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "cdcW3",
+              "name": "Secondary Link Mobile",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Zt2Iy",
+                  "name": "Link Label Mobile",
+                  "fill": "$accent-terracotta",
+                  "content": "Saber más",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "icon",
+                  "id": "RdudC",
+                  "name": "Link Arrow Mobile",
+                  "width": 15,
+                  "height": 15,
+                  "icon": "arrow-right",
+                  "library": "lucide",
+                  "fill": "$accent-terracotta"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "PV7mA",
+          "name": "Trust Note Mobile",
+          "fill": "$text-secondary",
+          "content": "Aceptando nuevos pacientes, en línea y presencial.",
+          "textAlign": "center",
+          "fontFamily": "$font-body",
+          "fontSize": 12,
+          "fontWeight": "normal",
+          "fontStyle": "italic"
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "bg": {
+      "type": "color",
+      "value": "#F5EEE4"
+    },
+    "text-primary": {
+      "type": "color",
+      "value": "#4A372C"
+    },
+    "text-secondary": {
+      "type": "color",
+      "value": "#7C6857"
+    },
+    "accent-terracotta": {
+      "type": "color",
+      "value": "#C97B58"
+    },
+    "accent-sage": {
+      "type": "color",
+      "value": "#8FA07E"
+    },
+    "accent-clay": {
+      "type": "color",
+      "value": "#E3C4A8"
+    },
+    "font-heading": {
+      "type": "string",
+      "value": "Fraunces"
+    },
+    "font-body": {
+      "type": "string",
+      "value": "Nunito"
+    }
+  },
+  "fileToken": "dd41375b-d379-4b47-ae4f-5689469b0faf"
+}

@@ -1,0 +1,417 @@
+{
+  "version": "2.17",
+  "children": [
+    {
+      "type": "frame",
+      "id": "m03PDh",
+      "x": 0,
+      "y": 0,
+      "name": "Navbar - Desktop",
+      "reusable": true,
+      "width": 1440,
+      "height": 96,
+      "fill": "$bg",
+      "stroke": "#E3C4A880",
+      "strokeWidth": {
+        "bottom": 1
+      },
+      "strokeAlignment": "inner",
+      "padding": [
+        0,
+        80
+      ],
+      "justifyContent": "space_between",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "rzgwD",
+          "name": "Psychologist Name",
+          "fill": "$text-primary",
+          "content": "Dra. Elena Ríos",
+          "fontFamily": "$font-heading",
+          "fontSize": 24,
+          "fontWeight": "600"
+        },
+        {
+          "type": "frame",
+          "id": "AGuTW",
+          "name": "Nav Links",
+          "gap": 40,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "X64nd",
+              "name": "Sobre mí",
+              "fill": "$text-secondary",
+              "content": "Sobre mí",
+              "fontFamily": "$font-body",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "letterSpacing": 0.2
+            },
+            {
+              "type": "text",
+              "id": "Dxvfw",
+              "name": "Servicios",
+              "fill": "$text-secondary",
+              "content": "Servicios",
+              "fontFamily": "$font-body",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "letterSpacing": 0.2
+            },
+            {
+              "type": "text",
+              "id": "f9K0zI",
+              "name": "Ubicación",
+              "fill": "$text-secondary",
+              "content": "Ubicación",
+              "fontFamily": "$font-body",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "letterSpacing": 0.2
+            },
+            {
+              "type": "frame",
+              "id": "jLKvy",
+              "name": "Contact Button",
+              "fill": "$text-primary",
+              "cornerRadius": 999,
+              "padding": [
+                10,
+                24
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "rC6vR",
+                  "name": "Contact Label",
+                  "fill": "$bg",
+                  "content": "Contacto",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ECxH0",
+      "x": 0,
+      "y": 176,
+      "name": "Navbar - Mobile (Collapsed)",
+      "reusable": true,
+      "width": 390,
+      "height": 72,
+      "fill": "$bg",
+      "stroke": "#E3C4A880",
+      "strokeWidth": {
+        "bottom": 1
+      },
+      "strokeAlignment": "inner",
+      "padding": [
+        0,
+        20
+      ],
+      "justifyContent": "space_between",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "K3vOW",
+          "name": "Psychologist Name Mobile",
+          "fill": "$text-primary",
+          "content": "Dra. Elena Ríos",
+          "fontFamily": "$font-heading",
+          "fontSize": 19,
+          "fontWeight": "600"
+        },
+        {
+          "type": "icon",
+          "id": "LjLlp",
+          "name": "Menu Icon",
+          "width": 24,
+          "height": 24,
+          "icon": "menu",
+          "library": "lucide",
+          "fill": "$text-primary"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "OygWe",
+      "x": 450,
+      "y": 176,
+      "name": "Navbar - Mobile (Open)",
+      "reusable": true,
+      "clip": true,
+      "width": 390,
+      "fill": "$bg",
+      "effect": {
+        "type": "shadow",
+        "shadowType": "outer",
+        "color": "#4A372C22",
+        "offset": {
+          "x": 0,
+          "y": 8
+        },
+        "blur": 24
+      },
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "DgsGT",
+          "name": "Top Bar",
+          "width": "fill_container",
+          "height": 72,
+          "padding": [
+            0,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "TpxV7",
+              "name": "Psychologist Name Mobile Open",
+              "fill": "$text-primary",
+              "content": "Dra. Elena Ríos",
+              "fontFamily": "$font-heading",
+              "fontSize": 19,
+              "fontWeight": "600"
+            },
+            {
+              "type": "icon",
+              "id": "sGwxL",
+              "name": "Close Icon",
+              "width": 24,
+              "height": 24,
+              "icon": "x",
+              "library": "lucide",
+              "fill": "$text-primary"
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "id": "z5toF",
+          "name": "Divider",
+          "fill": "#E3C4A880",
+          "width": "fill_container",
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "x0XizE",
+          "name": "Dropdown Panel",
+          "width": "fill_container",
+          "fill": "$bg",
+          "layout": "vertical",
+          "padding": [
+            4,
+            20,
+            28,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "r2HOjQ",
+              "name": "Sobre mí Row",
+              "width": "fill_container",
+              "stroke": "#E3C4A860",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "strokeAlignment": "inner",
+              "padding": [
+                16,
+                0
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "q2C1z",
+                  "name": "Sobre mí",
+                  "fill": "$text-secondary",
+                  "content": "Sobre mí",
+                  "fontFamily": "$font-body",
+                  "fontSize": 16,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "icon",
+                  "id": "oPkLM",
+                  "name": "Sobre mí Chevron",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "chevron-right",
+                  "library": "lucide",
+                  "fill": "$text-secondary"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "B6yk4",
+              "name": "Servicios Row",
+              "width": "fill_container",
+              "stroke": "#E3C4A860",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "strokeAlignment": "inner",
+              "padding": [
+                16,
+                0
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "W7RaDv",
+                  "name": "Servicios",
+                  "fill": "$text-secondary",
+                  "content": "Servicios",
+                  "fontFamily": "$font-body",
+                  "fontSize": 16,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "icon",
+                  "id": "TvsLk",
+                  "name": "Servicios Chevron",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "chevron-right",
+                  "library": "lucide",
+                  "fill": "$text-secondary"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "aB4jc",
+              "name": "Ubicación Row",
+              "width": "fill_container",
+              "stroke": "#E3C4A860",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "strokeAlignment": "inner",
+              "padding": [
+                16,
+                0
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "N3YxzT",
+                  "name": "Ubicación",
+                  "fill": "$text-secondary",
+                  "content": "Ubicación",
+                  "fontFamily": "$font-body",
+                  "fontSize": 16,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "icon",
+                  "id": "Biof6",
+                  "name": "Ubicación Chevron",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "chevron-right",
+                  "library": "lucide",
+                  "fill": "$text-secondary"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "L2l9Gr",
+              "name": "Button Spacer",
+              "width": "fill_container",
+              "height": 12
+            },
+            {
+              "type": "frame",
+              "id": "c73PPK",
+              "name": "Contact Button Mobile",
+              "width": "fill_container",
+              "fill": "$text-primary",
+              "cornerRadius": 999,
+              "padding": [
+                14,
+                0
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "uq2iE",
+                  "name": "Contact Label Mobile",
+                  "fill": "$bg",
+                  "content": "Contacto",
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "bg": {
+      "type": "color",
+      "value": "#F5EEE4"
+    },
+    "text-primary": {
+      "type": "color",
+      "value": "#4A372C"
+    },
+    "text-secondary": {
+      "type": "color",
+      "value": "#7C6857"
+    },
+    "accent-terracotta": {
+      "type": "color",
+      "value": "#C97B58"
+    },
+    "accent-sage": {
+      "type": "color",
+      "value": "#8FA07E"
+    },
+    "accent-clay": {
+      "type": "color",
+      "value": "#E3C4A8"
+    },
+    "font-heading": {
+      "type": "string",
+      "value": "Fraunces"
+    },
+    "font-body": {
+      "type": "string",
+      "value": "Nunito"
+    }
+  },
+  "fileToken": "83af8a92-c24d-40f2-98d5-7ee124783f12"
+}
