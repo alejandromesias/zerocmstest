@@ -1,7 +1,15 @@
 ---
 import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
 import Icon from "./Icon.astro";
 import portrait from "../assets/psico2.png";
+
+const subtextDesktop = await getEntry("hero", "subtext-desktop");
+const subtextMobile = await getEntry("hero", "subtext-mobile");
+
+if (!subtextDesktop || !subtextMobile) {
+  throw new Error("Missing hero subtext content collection entries");
+}
 ---
 
 <section class="relative overflow-hidden bg-[var(--color-bg)]">
@@ -50,11 +58,10 @@ import portrait from "../assets/psico2.png";
       </div>
 
       <p class="hero-subtext hidden w-full max-w-[460px] font-body leading-[1.55] text-[var(--color-text-secondary)] md:block md:text-left">
-        Terapia compasiva y basada en evidencia para adultos que atraviesan ansiedad, duelo y transiciones vitales —
-        en un espacio creado para el cambio real.
+        {subtextDesktop.body?.trim()}
       </p>
       <p class="w-[300px] font-body text-[15px] leading-[1.5] text-[var(--color-text-secondary)] md:hidden">
-        Terapia compasiva y basada en evidencia para adultos que atraviesan ansiedad, duelo y transiciones vitales.
+        {subtextMobile.body?.trim()}
       </p>
 
       <div class="hero-cta flex flex-col items-center gap-3.5 md:flex-row">
