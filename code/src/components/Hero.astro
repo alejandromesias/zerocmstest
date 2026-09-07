@@ -1,0 +1,88 @@
+---
+import { Image } from "astro:assets";
+import Icon from "./Icon.astro";
+import portrait from "../assets/psico2.png";
+---
+
+<section class="relative overflow-hidden bg-[var(--color-bg)]">
+  <div
+    class="absolute -top-[90px] -left-[90px] h-[240px] w-[240px] rounded-full bg-[var(--color-accent-sage)] opacity-[0.18] md:-top-[180px] md:-left-40 md:h-[480px] md:w-[480px]"
+  >
+  </div>
+  <div
+    class="absolute top-[20px] left-[300px] h-[60px] w-[60px] rounded-full border-[7px] border-[var(--color-accent-terracotta)] opacity-50 md:top-[660px] md:left-[30px] md:h-[90px] md:w-[90px] md:border-[10px]"
+  >
+  </div>
+
+  <div
+    class="relative mx-auto flex flex-col items-center gap-7 px-7 py-14 md:h-[760px] md:flex-row md:items-center md:gap-[60px] md:px-20 md:py-0"
+  >
+    <div class="relative order-1 h-[320px] w-[260px] shrink-0 md:order-2 md:h-full md:w-[560px]">
+      <div
+        class="absolute top-[-20px] left-[35px] h-[190px] w-[190px] rounded-full bg-[var(--color-accent-sage)] opacity-30 md:top-[-40px] md:left-[90px] md:h-[380px] md:w-[380px]"
+      >
+      </div>
+      <Image
+        src={portrait}
+        alt="Retrato de la Dra. Elena Ríos"
+        width={420}
+        height={560}
+        class="absolute top-[10px] left-[20px] h-[300px] w-[220px] rounded-t-[110px] object-cover shadow-[0_10px_24px_rgba(74,55,44,0.2)] md:top-[100px] md:left-[70px] md:h-[560px] md:w-[420px] md:rounded-t-[210px] md:shadow-[0_18px_40px_rgba(74,55,44,0.2)]"
+      />
+      <div
+        class="absolute top-[15px] left-[225px] h-3.5 w-3.5 rounded-full bg-[var(--color-accent-clay)] opacity-90 md:top-[120px] md:left-[460px] md:h-5 md:w-5"
+      >
+      </div>
+    </div>
+
+    <div
+      class="order-2 flex w-full flex-col items-center gap-7 text-center md:order-1 md:h-full md:w-full md:items-start md:justify-center md:gap-7 md:text-left"
+    >
+      <p
+        class="font-body text-[11px] font-bold tracking-[1.5px] text-[var(--color-accent-sage)] md:text-[13px] md:tracking-[2px]"
+      >
+        PSICÓLOGA CLÍNICA
+      </p>
+
+      <div class="flex flex-col items-center gap-0.5 md:items-start md:gap-1">
+        <p class="font-heading text-[32px] leading-tight font-light text-[var(--color-text-primary)] italic md:text-[58px]">
+          La sanación comienza
+        </p>
+        <p class="font-heading text-[32px] leading-tight font-bold text-[var(--color-text-primary)] md:text-[58px]">
+          cuando te escuchan.
+        </p>
+      </div>
+
+      <p class="hidden w-[460px] font-body text-[17px] leading-[1.55] text-[var(--color-text-secondary)] md:block md:text-left">
+        Terapia compasiva y basada en evidencia para adultos que atraviesan ansiedad, duelo y transiciones vitales —
+        en un espacio creado para el cambio real.
+      </p>
+      <p class="w-[300px] font-body text-[15px] leading-[1.5] text-[var(--color-text-secondary)] md:hidden">
+        Terapia compasiva y basada en evidencia para adultos que atraviesan ansiedad, duelo y transiciones vitales.
+      </p>
+
+      <div class="flex flex-col items-center gap-3.5 md:flex-row md:gap-6">
+        <a
+          href="#agendar"
+          class="rounded-full bg-[var(--color-text-primary)] px-7 py-3.5 font-body text-sm font-semibold text-[var(--color-bg)] transition-opacity hover:opacity-90 md:px-8 md:py-4 md:text-[15px]"
+        >
+          Agendar una sesión
+        </a>
+        <a
+          href="#saber-mas"
+          class="flex items-center gap-1.5 font-body text-sm font-semibold text-[var(--color-accent-terracotta)] hover:underline md:text-[15px]"
+        >
+          Saber más
+          <Icon name="arrow-right" class="h-[15px] w-[15px] md:h-4 md:w-4" />
+        </a>
+      </div>
+
+      <p class="hidden font-body text-[13px] text-[var(--color-text-secondary)] italic md:block md:text-left">
+        Actualmente aceptando nuevos pacientes — en línea y presencial.
+      </p>
+      <p class="font-body text-xs text-[var(--color-text-secondary)] italic md:hidden">
+        Aceptando nuevos pacientes, en línea y presencial.
+      </p>
+    </div>
+  </div>
+</section>
