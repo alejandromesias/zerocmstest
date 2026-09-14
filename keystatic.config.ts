@@ -30,6 +30,12 @@ export default config({
           description: "Línea de confianza mostrada bajo los botones de acción.",
           multiline: true,
         }),
+        retrato: fields.image({
+          label: "Retrato",
+          description: "Foto mostrada junto al encabezado del hero.",
+          directory: "src/content/hero",
+          publicPath: "./",
+        }),
       },
     }),
   },
