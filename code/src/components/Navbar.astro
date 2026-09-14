@@ -8,8 +8,8 @@ const navLinks = [
 ];
 ---
 
-<header class="sticky top-0 z-50 w-full bg-[var(--color-nav-bg)]">
-  <div class="navbar-bar flex h-[72px] w-full items-center justify-between border-b border-[#E3C4A880] px-5">
+<header class="animate-enter sticky top-0 z-50 w-full bg-[var(--color-nav-bg)] backdrop-blur-md [animation-delay:0ms]">
+  <div class="navbar-bar flex h-[72px] w-full items-center justify-between border-b border-[#C9DCE380] px-5">
     <p class="navbar-brand font-heading text-[19px] font-semibold text-[var(--color-text-primary)]">
       Dra. Elena Ríos
     </p>
@@ -27,7 +27,7 @@ const navLinks = [
       }
       <a
         href="#contacto"
-        class="navbar-contact rounded-full bg-[var(--color-text-primary)] px-6 py-2.5 font-body text-sm font-bold text-[var(--color-bg)] transition-opacity hover:opacity-90"
+        class="navbar-contact rounded-full bg-[var(--color-text-primary)] px-6 py-2.5 font-body text-sm font-bold text-[var(--color-bg)] transition-colors hover:bg-[var(--color-accent-denim)]"
       >
         Contacto
       </a>
@@ -48,14 +48,14 @@ const navLinks = [
 
   <div
     id="mobile-menu"
-    class="hidden w-full border-t border-[#E3C4A880] bg-[var(--color-nav-bg)] shadow-[0_8px_24px_rgba(74,55,44,0.13)] md:hidden"
+    class="hidden absolute top-full left-0 w-full border-t border-[#C9DCE380] bg-[var(--color-nav-bg)] shadow-[0_8px_24px_rgba(44,58,77,0.13)] backdrop-blur-md md:hidden"
   >
     <nav aria-label="Principal móvil" class="flex flex-col px-5 pt-1 pb-7">
       {
         navLinks.map((link) => (
           <a
             href={link.href}
-            class="flex items-center justify-between border-b border-[#E3C4A860] py-4 font-body text-base font-bold text-[var(--color-text-secondary)]"
+            class="flex items-center justify-between border-b border-[#C9DCE360] py-4 font-body text-base font-bold text-[var(--color-text-secondary)]"
           >
             {link.label}
             <Icon name="chevron-right" class="h-[18px] w-[18px] text-[var(--color-text-secondary)]" />
@@ -64,7 +64,7 @@ const navLinks = [
       }
       <a
         href="#contacto"
-        class="mt-3 flex w-full items-center justify-center rounded-full bg-[var(--color-text-primary)] py-3.5 font-body text-[15px] font-bold text-[var(--color-bg)]"
+        class="mt-3 flex w-full items-center justify-center rounded-full bg-[var(--color-text-primary)] py-3.5 font-body text-[15px] font-bold text-[var(--color-bg)] transition-colors hover:bg-[var(--color-accent-denim)]"
       >
         Contacto
       </a>
@@ -99,6 +99,25 @@ const navLinks = [
       font-size: clamp(12px, calc(8.67px + 0.4167vw), 14px);
     }
   }
+
+  #mobile-menu {
+    transform: translateY(-8px);
+    opacity: 0;
+    transition:
+      opacity 200ms ease-out,
+      transform 200ms ease-out;
+  }
+
+  #mobile-menu.is-open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #mobile-menu {
+      transition: none;
+    }
+  }
 </style>
 
 <script>
@@ -107,13 +126,32 @@ const navLinks = [
   const iconOpen = toggle?.querySelector('[data-icon="open"]');
   const iconClose = toggle?.querySelector('[data-icon="close"]');
 
+  // Keep this in sync with the transition-duration set on #mobile-menu.
+  const MENU_TRANSITION_MS = 200;
+  let closeTimeout: ReturnType<typeof setTimeout> | undefined;
+
   toggle?.addEventListener("click", () => {
     const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    const willOpen = !isOpen;
 
-    toggle.setAttribute("aria-expanded", String(!isOpen));
-    toggle.setAttribute("aria-label", isOpen ? "Abrir menú" : "Cerrar menú");
-    menu?.classList.toggle("hidden", isOpen);
-    iconOpen?.classList.toggle("hidden", !isOpen);
-    iconClose?.classList.toggle("hidden", isOpen);
+    toggle.setAttribute("aria-expanded", String(willOpen));
+    toggle.setAttribute("aria-label", willOpen ? "Cerrar menú" : "Abrir menú");
+    iconOpen?.classList.toggle("hidden", willOpen);
+    iconClose?.classList.toggle("hidden", !willOpen);
+
+    if (willOpen) {
+      clearTimeout(closeTimeout);
+      menu?.classList.remove("hidden");
+      // Force a reflow so the "hidden" removal is painted before the
+      // "is-open" transition starts — otherwise the browser can collapse
+      // both changes into one frame and skip the animation entirely.
+      menu?.offsetHeight;
+      menu?.classList.add("is-open");
+    } else {
+      menu?.classList.remove("is-open");
+      closeTimeout = setTimeout(() => {
+        menu?.classList.add("hidden");
+      }, MENU_TRANSITION_MS);
+    }
   });
 </script>

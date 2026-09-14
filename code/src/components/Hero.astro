@@ -4,87 +4,77 @@ import { getEntry } from "astro:content";
 import Icon from "./Icon.astro";
 import portrait from "../assets/psico2.png";
 
-const subtextDesktop = await getEntry("hero", "subtext-desktop");
-const subtextMobile = await getEntry("hero", "subtext-mobile");
+const heroPagina = await getEntry("hero", "pagina");
 
-if (!subtextDesktop || !subtextMobile) {
-  throw new Error("Missing hero subtext content collection entries");
+if (!heroPagina) {
+  throw new Error("Missing hero pagina content collection entry");
 }
 ---
 
 <section class="relative overflow-hidden bg-[var(--color-bg)]">
-  <div
-    class="hero-blob-sage absolute -top-[90px] -left-[90px] h-[240px] w-[240px] rounded-full bg-[var(--color-accent-sage)] opacity-[0.18]"
-  >
-  </div>
-  <div
-    class="hero-blob-ring absolute top-[20px] left-[300px] h-[60px] w-[60px] rounded-full border-[7px] border-[var(--color-accent-terracotta)] opacity-50"
-  >
-  </div>
-
   <div class="hero-shell relative mx-auto flex flex-col items-center gap-7 px-7 py-14 md:flex-row md:items-center md:py-0">
-    <div class="hero-portrait relative order-1 h-[320px] w-[260px] shrink-0 md:order-2 md:h-full">
+    <div class="hero-portrait relative order-1 flex h-[320px] w-[260px] shrink-0 items-center justify-center md:order-2 md:h-full">
       <div
-        class="hero-portrait-blob absolute top-[-20px] left-[35px] h-[190px] w-[190px] rounded-full bg-[var(--color-accent-sage)] opacity-30"
+        class="hero-portrait-glow animate-enter-glow pointer-events-none absolute -inset-10 rounded-full bg-[radial-gradient(circle,var(--color-accent-teal)_0%,transparent_70%)] blur-3xl [animation-delay:60ms]"
+        aria-hidden="true"
       >
       </div>
-      <Image
-        src={portrait}
-        alt="Retrato de la Dra. Elena Ríos"
-        width={420}
-        height={560}
-        class="hero-portrait-img absolute top-[10px] left-[20px] h-[300px] w-[220px] rounded-t-[110px] object-cover shadow-[0_10px_24px_rgba(74,55,44,0.2)] md:shadow-[0_18px_40px_rgba(74,55,44,0.2)]"
-      />
-      <div
-        class="hero-portrait-dot absolute top-[15px] left-[225px] h-3.5 w-3.5 rounded-full bg-[var(--color-accent-clay)] opacity-90"
-      >
+      <div class="hero-portrait-frame animate-enter-portrait relative transition-transform duration-300 ease-out [animation-delay:140ms]">
+        <Image
+          src={portrait}
+          alt="Retrato de la Dra. Elena Ríos"
+          width={480}
+          height={480}
+          class="hero-portrait-img h-[260px] w-[260px] rounded-[20px] object-cover shadow-[0_6px_16px_rgba(44,58,77,0.25),0_16px_36px_rgba(44,58,77,0.28)] md:shadow-[0_10px_24px_rgba(44,58,77,0.28),0_28px_64px_rgba(44,58,77,0.32)]"
+        />
+        <div
+          class="hero-portrait-dot absolute -top-1.5 -right-1.5 h-3.5 w-3.5 rounded-full bg-[var(--color-accent-mist)] opacity-90"
+        >
+        </div>
       </div>
     </div>
 
     <div
       class="order-2 flex w-full flex-col items-center gap-7 text-center md:order-1 md:h-full md:w-full md:items-start md:justify-center md:gap-7 md:text-left"
     >
-      <p class="hero-eyebrow font-body text-[11px] font-bold tracking-[1.5px] text-[var(--color-accent-sage)]">
+      <p class="hero-eyebrow animate-enter font-body text-[11px] font-bold tracking-[1.5px] text-[var(--color-accent-teal-deep)] [animation-delay:80ms]">
         PSICÓLOGA CLÍNICA
       </p>
 
       <div class="flex flex-col items-center gap-0.5 md:items-start md:gap-1">
-        <p class="hero-headline-line font-heading text-[32px] leading-tight font-light text-[var(--color-text-primary)] italic">
+        <p class="hero-headline-line animate-enter font-accent text-[32px] leading-tight font-light text-[var(--color-text-primary)] italic [animation-delay:150ms]">
           La sanación comienza
         </p>
-        <p class="hero-headline-line font-heading text-[32px] leading-tight font-bold text-[var(--color-text-primary)]">
+        <p class="hero-headline-line animate-enter font-heading text-[32px] leading-tight font-bold text-[var(--color-text-primary)] [animation-delay:220ms]">
           cuando te escuchan.
         </p>
       </div>
 
-      <p class="hero-subtext hidden w-full max-w-[460px] font-body leading-[1.55] text-[var(--color-text-secondary)] md:block md:text-left">
-        {subtextDesktop.data.subtext}
-      </p>
-      <p class="w-[300px] font-body text-[15px] leading-[1.5] text-[var(--color-text-secondary)] md:hidden">
-        {subtextMobile.data.subtext}
+      <p class="hero-subtext animate-enter w-[300px] font-body leading-[1.5] text-[var(--color-text-secondary)] md:w-full md:max-w-[460px] md:text-left md:leading-[1.55] [animation-delay:290ms]">
+        {heroPagina.data.titulo}
       </p>
 
-      <div class="hero-cta flex flex-col items-center gap-3.5 md:flex-row">
+      <div class="hero-cta animate-enter flex flex-col items-center gap-3.5 md:flex-row [animation-delay:360ms]">
         <a
           href="#agendar"
-          class="hero-btn-primary rounded-full bg-[var(--color-text-primary)] px-7 py-3.5 font-body text-sm font-semibold text-[var(--color-bg)] transition-opacity hover:opacity-90"
+          class="hero-btn-primary rounded-full bg-[var(--color-text-primary)] px-7 py-3.5 font-body text-sm font-semibold text-[var(--color-bg)] transition-colors hover:bg-[var(--color-accent-denim)]"
         >
           Agendar una sesión
         </a>
         <a
           href="#saber-mas"
-          class="hero-link-secondary flex items-center gap-1.5 font-body text-sm font-semibold text-[var(--color-accent-terracotta)] hover:underline"
+          class="hero-link-secondary group flex items-center gap-1.5 font-body text-sm font-semibold text-[var(--color-accent-denim)] hover:underline"
         >
           Saber más
-          <Icon name="arrow-right" class="hero-icon-arrow h-[15px] w-[15px]" />
+          <Icon
+            name="arrow-right"
+            class="hero-icon-arrow h-[15px] w-[15px] transition-transform group-hover:translate-x-1"
+          />
         </a>
       </div>
 
-      <p class="hero-trust hidden font-body text-[13px] text-[var(--color-text-secondary)] italic md:block md:text-left">
-        {subtextDesktop.data.trust}
-      </p>
-      <p class="font-body text-xs text-[var(--color-text-secondary)] italic md:hidden">
-        {subtextMobile.data.trust}
+      <p class="hero-trust animate-enter font-body text-[var(--color-text-secondary)] italic md:text-left [animation-delay:430ms]">
+        {heroPagina.data.subtitulo}
       </p>
     </div>
   </div>
@@ -98,6 +88,11 @@ if (!subtextDesktop || !subtextMobile) {
     already-approved 1440 look), so nothing changes there. In between, every
     dimension interpolates linearly with viewport width so the desktop layout
     compresses smoothly instead of overflowing between ~800–1100px.
+
+    hero-subtext and hero-trust font-size clamps sit outside this block: they
+    scale continuously across the full viewport range (mobile through
+    desktop) since those two elements are no longer split into separate
+    mobile/desktop nodes.
   */
   @media (min-width: 768px) {
     .hero-shell {
@@ -107,46 +102,13 @@ if (!subtextDesktop || !subtextMobile) {
       padding-block: 0;
     }
 
-    .hero-blob-sage {
-      top: clamp(-180px, calc(33.3px - 16.67vw), -100px);
-      left: clamp(-160px, calc(26.7px - 14.58vw), -90px);
-      height: clamp(260px, calc(-106.7px + 45.83vw), 480px);
-      width: clamp(260px, calc(-106.7px + 45.83vw), 480px);
-    }
-
-    .hero-blob-ring {
-      top: clamp(380px, calc(-86.7px + 58.33vw), 660px);
-      left: clamp(16px, calc(-7.3px + 2.92vw), 30px);
-      height: clamp(50px, calc(-16.7px + 8.33vw), 90px);
-      width: clamp(50px, calc(-16.7px + 8.33vw), 90px);
-      border-width: clamp(6px, calc(-0.67px + 0.833vw), 10px);
-    }
-
     .hero-portrait {
       width: clamp(300px, calc(-133.3px + 54.17vw), 560px);
     }
 
-    .hero-portrait-blob {
-      top: clamp(-40px, calc(8px - 3.75vw), -22px);
-      left: clamp(48px, calc(-22px + 8.75vw), 90px);
-      height: clamp(200px, calc(-100px + 37.5vw), 380px);
-      width: clamp(200px, calc(-100px + 37.5vw), 380px);
-    }
-
     .hero-portrait-img {
-      top: clamp(54px, calc(-22.7px + 9.58vw), 100px);
-      left: clamp(38px, calc(-15.3px + 6.67vw), 70px);
       height: clamp(300px, calc(-133.3px + 54.17vw), 560px);
-      width: clamp(220px, calc(-113.3px + 41.67vw), 420px);
-      border-top-left-radius: clamp(110px, calc(-56.7px + 20.83vw), 210px);
-      border-top-right-radius: clamp(110px, calc(-56.7px + 20.83vw), 210px);
-    }
-
-    .hero-portrait-dot {
-      top: clamp(64px, calc(-29.3px + 11.67vw), 120px);
-      left: clamp(248px, calc(-105.3px + 44.17vw), 460px);
-      height: clamp(11px, calc(-4px + 1.875vw), 20px);
-      width: clamp(11px, calc(-4px + 1.875vw), 20px);
+      width: clamp(300px, calc(-133.3px + 54.17vw), 560px);
     }
 
     .hero-eyebrow {
@@ -156,10 +118,6 @@ if (!subtextDesktop || !subtextMobile) {
 
     .hero-headline-line {
       font-size: clamp(34px, calc(-6px + 5vw), 58px);
-    }
-
-    .hero-subtext {
-      font-size: clamp(14px, calc(9px + 0.625vw), 17px);
     }
 
     .hero-cta {
@@ -180,9 +138,49 @@ if (!subtextDesktop || !subtextMobile) {
       height: clamp(13px, calc(8px + 0.625vw), 16px);
       width: clamp(13px, calc(8px + 0.625vw), 16px);
     }
+  }
 
-    .hero-trust {
-      font-size: clamp(11px, calc(7.67px + 0.4167vw), 13px);
+  .hero-subtext {
+    font-size: clamp(14px, calc(9px + 0.625vw), 17px);
+  }
+
+  .hero-trust {
+    font-size: clamp(11px, calc(7.67px + 0.4167vw), 13px);
+  }
+
+  .hero-portrait-frame:hover {
+    animation: hero-portrait-float 3s ease-in-out infinite;
+  }
+
+  @keyframes hero-portrait-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-portrait-frame:hover {
+      animation: none;
     }
   }
 </style>
+
+<script>
+  // Once the load-in entrance finishes, drop the class that supplies it.
+  // Otherwise the "animation" property never settles on "none": ending a
+  // hover falls back to this same entrance animation, which replays from
+  // scratch (invisible + shrunk) instead of leaving transition-transform
+  // to ease the picture back to rest — the "disappears and reloads" jump.
+  const portraitFrame = document.querySelector<HTMLElement>(".hero-portrait-frame");
+
+  portraitFrame?.addEventListener("animationend", (event) => {
+    if (event.animationName === "portrait-rise") {
+      portraitFrame.classList.remove("animate-enter-portrait");
+    }
+  });
+</script>
+
