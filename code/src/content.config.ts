@@ -4,10 +4,12 @@ import { z } from "astro/zod";
 
 const hero = defineCollection({
   loader: glob({ base: "./src/content/hero", pattern: "**/*.yaml" }),
-  schema: z.object({
-    titulo: z.string(),
-    subtitulo: z.string(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      titulo: z.string(),
+      subtitulo: z.string(),
+      retrato: image(),
+    }),
 });
 
 export const collections = { hero };

@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import { getEntry } from "astro:content";
 import Icon from "./Icon.astro";
-import portrait from "../assets/psico2.png";
 
 const heroPagina = await getEntry("hero", "pagina");
 
@@ -21,7 +20,7 @@ if (!heroPagina) {
       </div>
       <div class="hero-portrait-frame animate-enter-portrait relative transition-transform duration-300 ease-out [animation-delay:140ms]">
         <Image
-          src={portrait}
+          src={heroPagina.data.retrato}
           alt="Retrato de la Dra. Elena Ríos"
           width={480}
           height={480}
