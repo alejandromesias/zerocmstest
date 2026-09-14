@@ -5,7 +5,11 @@ const isLocal = import.meta.env.DEV;
 export default config({
   storage: isLocal
     ? { kind: 'local' }
-    : { kind: 'cloud' },
+    // Cloud storage reads directly from the GitHub repo, which has no concept
+    // of the local dev cwd (code/) that local storage resolves paths against.
+    // The repo root has no src/ or keystatic.config.ts of its own — everything
+    // lives under code/ — so pathPrefix tells Cloud to look for content there.
+    : { kind: 'cloud', pathPrefix: 'code' },
   
   // Keystatic Cloud project details
   cloud: {
