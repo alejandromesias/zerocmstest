@@ -32,6 +32,7 @@ export default defineConfig({
   // `export const prerender = false` (Keystatic's admin UI) are server-rendered
   // on demand. See https://docs.astro.build/en/guides/upgrade-to/v5/#removed-hybrid-rendering-mode
   output: 'static',
+  redirects: { '/admin': '/keystatic' },
   ...adapterConfig,
   session: false,
 
