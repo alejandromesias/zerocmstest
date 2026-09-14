@@ -1,8 +1,15 @@
 import { config, fields, singleton } from "@keystatic/core";
 
+const isLocal = import.meta.env.DEV;
+
 export default config({
-  storage: {
-    kind: "local",
+  storage: isLocal
+    ? { kind: 'local' }
+    : { kind: 'cloud' },
+  
+  // Keystatic Cloud project details
+  cloud: {
+    project: 'test-team-amesias/pocwork1keystatic1',
   },
   singletons: {
     heroPagina: singleton({
