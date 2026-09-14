@@ -15,6 +15,12 @@ export default config({
   cloud: {
     project: 'test-team-amesias/pocwork1keystatic1',
   },
+  ui: {
+    brand: { name: 'Dra. Elena Rios' },
+    navigation: {
+      Contenido: ['heroPagina'],
+    },
+  },
   singletons: {
     heroPagina: singleton({
       label: "Hero — Página principal",
