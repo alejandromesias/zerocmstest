@@ -9,12 +9,14 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "deploy": "astro build && wrangler deploy",
-    "deploy:dry": "astro build && wrangler deploy --dry-run"
+    "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^14.3.1",
+    "@astrojs/compiler-binding-wasm32-wasi": "0.4.0",
+    "@bruits/satteri-wasm32-wasi": "0.10.5",
+    "@img/sharp-webcontainers-wasm32": "0.35.4",
+    "@rolldown/binding-wasm32-wasi": "1.2.7",
+    "@tailwindcss/oxide-wasm32-wasi": "4.3.3",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.3.1",
     "astroadmin": "^1.8.3",
@@ -24,7 +26,6 @@
     "esbuild": true
   },
   "devDependencies": {
-    "@types/node": "^26.5.1",
-    "wrangler": "^4.129.0"
+    "@types/node": "^26.5.1"
   }
 }
