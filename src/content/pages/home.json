@@ -1,0 +1,27 @@
+{
+  "title": "Inicio",
+  "blocks": [
+    {
+      "type": "servicios",
+      "encabezado": "Servicios",
+      "texto": "testing, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
+    },
+    {
+      "type": "hero",
+      "eyebrow": "PSICÓLOGA CLÍNICA",
+      "titularCursiva": "La sanación comienza ahora",
+      "titularNegrita": "cuando te escuchan.",
+      "titulo": "Terapia compasiva y basada en evidencia para adultos que atraviesan ansiedad, duelo y transiciones vitales. - test local",
+      "botonPrincipal": "Agendar una sesión now",
+      "botonSecundario": "Saber más ahora",
+      "subtitulo": "Aceptando nuevos pacientes, en línea y presencial. -  test cloud",
+      "retrato": "../assets/images/andre1-1792806105718.png",
+      "retratoAlt": "Retrato de la Dra. Elena Ríos"
+    },
+    {
+      "type": "servicios",
+      "encabezado": "testblock",
+      "texto": "testing"
+    }
+  ]
+}

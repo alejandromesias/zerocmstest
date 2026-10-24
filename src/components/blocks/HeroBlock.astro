@@ -1,16 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import { getEntry } from "astro:content";
-import Icon from "./Icon.astro";
+import Icon from "../Icon.astro";
 
-const heroPagina = await getEntry("hero", "pagina");
-
-if (!heroPagina) {
-  throw new Error("Missing hero pagina content collection entry");
-}
+const { block, index } = Astro.props;
 ---
 
-<section class="relative overflow-hidden bg-[var(--color-bg)]">
+<section data-block-index={index} class="relative overflow-hidden bg-[var(--color-bg)]">
   <div class="hero-shell relative mx-auto flex flex-col items-center gap-7 px-7 py-14 md:flex-row md:items-center md:py-0">
     <div class="hero-portrait relative order-1 flex h-[320px] w-[260px] shrink-0 items-center justify-center md:order-2 md:h-full">
       <div
@@ -20,8 +15,9 @@ if (!heroPagina) {
       </div>
       <div class="hero-portrait-frame animate-enter-portrait relative transition-transform duration-300 ease-out [animation-delay:140ms]">
         <Image
-          src={heroPagina.data.retrato}
-          alt="Retrato de la Dra. Elena Ríos"
+          src={block.retrato}
+          alt={block.retratoAlt}
+          data-aa-field={`blocks[${index}].retrato`}
           width={480}
           height={480}
           class="hero-portrait-img h-[260px] w-[260px] rounded-[20px] object-cover shadow-[0_6px_16px_rgba(44,58,77,0.25),0_16px_36px_rgba(44,58,77,0.28)] md:shadow-[0_10px_24px_rgba(44,58,77,0.28),0_28px_64px_rgba(44,58,77,0.32)]"
@@ -36,21 +32,21 @@ if (!heroPagina) {
     <div
       class="order-2 flex w-full flex-col items-center gap-7 text-center md:order-1 md:h-full md:w-full md:items-start md:justify-center md:gap-7 md:text-left"
     >
-      <p class="hero-eyebrow animate-enter font-body text-[11px] font-bold tracking-[1.5px] text-[var(--color-accent-teal-deep)] [animation-delay:80ms]">
-        PSICÓLOGA CLÍNICA
+      <p data-aa-field={`blocks[${index}].eyebrow`} class="hero-eyebrow animate-enter font-body text-[11px] font-bold tracking-[1.5px] text-[var(--color-accent-teal-deep)] [animation-delay:80ms]">
+        {block.eyebrow}
       </p>
 
       <div class="flex flex-col items-center gap-0.5 md:items-start md:gap-1">
-        <p class="hero-headline-line animate-enter font-accent text-[32px] leading-tight font-light text-[var(--color-text-primary)] italic [animation-delay:150ms]">
-          La sanación comienza
+        <p data-aa-field={`blocks[${index}].titularCursiva`} class="hero-headline-line animate-enter font-accent text-[32px] leading-tight font-light text-[var(--color-text-primary)] italic [animation-delay:150ms]">
+          {block.titularCursiva}
         </p>
-        <p class="hero-headline-line animate-enter font-heading text-[32px] leading-tight font-bold text-[var(--color-text-primary)] [animation-delay:220ms]">
-          cuando te escuchan.
+        <p data-aa-field={`blocks[${index}].titularNegrita`} class="hero-headline-line animate-enter font-heading text-[32px] leading-tight font-bold text-[var(--color-text-primary)] [animation-delay:220ms]">
+          {block.titularNegrita}
         </p>
       </div>
 
-      <p class="hero-subtext animate-enter w-[300px] font-body leading-[1.5] text-[var(--color-text-secondary)] md:w-full md:max-w-[460px] md:text-left md:leading-[1.55] [animation-delay:290ms]">
-        {heroPagina.data.titulo}
+      <p data-aa-field={`blocks[${index}].titulo`} class="hero-subtext animate-enter w-[300px] font-body leading-[1.5] text-[var(--color-text-secondary)] md:w-full md:max-w-[460px] md:text-left md:leading-[1.55] [animation-delay:290ms]">
+        {block.titulo}
       </p>
 
       <div class="hero-cta animate-enter flex flex-col items-center gap-3.5 md:flex-row [animation-delay:360ms]">
@@ -58,13 +54,13 @@ if (!heroPagina) {
           href="#agendar"
           class="hero-btn-primary rounded-full bg-[var(--color-text-primary)] px-7 py-3.5 font-body text-sm font-semibold text-[var(--color-bg)] transition-colors hover:bg-[var(--color-accent-denim)]"
         >
-          Agendar una sesión
+          {block.botonPrincipal}
         </a>
         <a
           href="#saber-mas"
           class="hero-link-secondary group flex items-center gap-1.5 font-body text-sm font-semibold text-[var(--color-accent-denim)] hover:underline"
         >
-          Saber más
+          {block.botonSecundario}
           <Icon
             name="arrow-right"
             class="hero-icon-arrow h-[15px] w-[15px] transition-transform group-hover:translate-x-1"
@@ -72,8 +68,8 @@ if (!heroPagina) {
         </a>
       </div>
 
-      <p class="hero-trust animate-enter font-body text-[var(--color-text-secondary)] italic md:text-left [animation-delay:430ms]">
-        {heroPagina.data.subtitulo}
+      <p data-aa-field={`blocks[${index}].subtitulo`} class="hero-trust animate-enter font-body text-[var(--color-text-secondary)] italic md:text-left [animation-delay:430ms]">
+        {block.subtitulo}
       </p>
     </div>
   </div>
